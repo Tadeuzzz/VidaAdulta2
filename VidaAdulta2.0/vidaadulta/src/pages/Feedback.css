@@ -1,0 +1,90 @@
+/* Estilo global */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Cookie Banner */
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .cookie-buttons button {
+    background-color: #72b1fa;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .cookie-buttons button:hover {
+    background-color: #5a9ae0;
+  }
+  
+  /* Header */
+  header {
+    background-color: white;
+    padding: 20px 4%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  header .interface {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Formulário */
+  .formulario {
+    padding: 40px 4%;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+  
+  .formulario form input, .formulario form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Testimonial Carousel */
+  .carousel-wrapper {
+    padding: 40px 4%;
+  }
+  
+  .testimonial-item {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .testimonial-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+  
+  .testimonial-carousel {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .carousel-controls button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  

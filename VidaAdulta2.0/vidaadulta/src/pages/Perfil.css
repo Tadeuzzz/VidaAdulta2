@@ -1,0 +1,87 @@
+.perfil-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: #f0f4f8; /* Cor de fundo suave */
+  }
+  
+  .perfil-content {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 500px;
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .perfil-welcome {
+    font-size: 24px;
+    color: #333; /* Cor do texto */
+    margin-bottom: 20px;
+  }
+  
+  .perfil-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 2px solid #007bff; /* Borda azul */
+  }
+  
+  .perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espaçamento entre os inputs */
+  }
+  
+  .perfil-input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .perfil-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+  }
+  
+  .perfil-input:focus {
+    border-color: #007bff; /* Cor da borda ao focar */
+    outline: none; /* Remove o contorno padrão */
+  }
+  
+  .perfil-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .perfil-button:hover {
+    background-color: #0056b3; /* Cor do botão ao passar o mouse */
+  }
+  
+  .perfil-info {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Fundo suave para as informações */
+  }
+  
+  .perfil-loading {
+    font-size: 18px;
+    color: #555;
+  }
+  

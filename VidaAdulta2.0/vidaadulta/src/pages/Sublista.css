@@ -1,0 +1,57 @@
+
+
+.flex {
+  display: flex; /* Layout flexível para img e texto */
+  flex-wrap: wrap; /* Permite quebrar linhas em dispositivos menores */
+  justify-content: space-between; /* Espaçamento entre os itens */
+  width: 100%; /* Largura total */
+  margin: 20px 0; /* Espaçamento vertical */
+}
+
+
+h2 {
+  font-size: 24px; /* Tamanho do título */
+  margin-bottom: 10px; /* Espaçamento abaixo do título */
+  color: #4a4a4a; /* Cor do título */
+}
+
+h3 {
+  font-size: 20px; /* Tamanho dos subtítulos */
+  margin-top: 15px; /* Espaço acima dos subtítulos */
+  color: #4a4a4a; /* Cor dos subtítulos */
+}
+
+p {
+  line-height: 1.6; /* Espaçamento entre linhas */
+  margin-bottom: 15px; /* Espaço abaixo dos parágrafos */
+}
+
+.buttons-container {
+  display: flex; /* Layout flexível para botões */
+  margin-top: 20px; /* Espaço acima dos botões */
+}
+
+.button {
+  background-color: #007bff; /* Cor de fundo do botão */
+  color: white; /* Cor do texto do botão */
+  border: none; /* Remove bordas */
+  border-radius: 5px; /* Cantos arredondados */
+  padding: 10px 15px; /* Espaçamento interno */
+  cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+  transition: background-color 0.3s; /* Transição suave para a cor de fundo */
+  margin-right: 10px; /* Espaço entre os botões */
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+#like-btn, #dislike-btn {
+  display: flex; 
+  align-items: center; 
+}
+
+#like-count, #dislike-count {
+  margin-left: 5px;
+  font-weight: bold; 
+}

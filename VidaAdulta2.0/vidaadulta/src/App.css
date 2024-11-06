@@ -1,0 +1,230 @@
+/* ESTILO GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: white;
+  height: 100vh;
+}
+
+
+.flex {
+  display: flex;
+}
+
+.login-contato button {
+  padding: 10px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #6db5f0cb;
+  border: 0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+h2.titulo {
+  color: black;
+  font-size: 38px;
+  text-align: center;
+}
+
+h2.titulo span {
+  color: #72b1fa;
+}
+
+button:hover,
+.btn-enviar input:hover {
+  box-shadow: 0px 0px 8px #72b1fa;
+  transform: scale(1.05);
+}
+
+
+/* Submenu */
+.sub-menu {
+  display: none; /* Esconde o submenu por padrão */
+  position: absolute; /* Posiciona o submenu em relação ao seu elemento pai */
+  background-color: white; /* Cor de fundo */
+  z-index: 1; /* Garante que o submenu fique acima de outros elementos */
+  list-style: none; /* Remove os marcadores de lista */
+  padding: 0; /* Remove o padding padrão */
+  margin: 0; /* Remove o margin padrão */
+  width: 200px; /* Define uma largura para o submenu */
+}
+
+nav ul li {
+  position: relative; /* Define o item de navegação principal como referência para o submenu */
+}
+
+nav ul li:hover .sub-menu {
+  display: block; /* Exibe o submenu ao passar o mouse */
+}
+
+.sub-menu li {
+  display: block; /* Garante que cada item do submenu fique em uma linha separada (vertical) */
+}
+
+.sub-menu li a {
+  padding: 10px;
+  color: black;
+  text-decoration: none;
+  display: block; /* Garante que o link preencha todo o espaço do item */
+  text-align: left;
+  background-color: white; /* Define a cor de fundo para os itens do submenu */
+  border-bottom: 1px solid #ccc; /* Adiciona uma borda entre os itens */
+}
+
+.sub-menu li a:hover {
+  background-color: #72b1fa; /* Cor de fundo ao passar o mouse sobre o item */
+}
+
+/* Estilos do Banner de Cookies */
+.cookie-banner {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cookie-content {
+    flex: 1;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Estilos do Slider */
+.slider {
+    position: relative;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.slider-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.slide-box {
+    display: none; /* Ocultar as imagens inicialmente */
+}
+
+.slide-box:first-child {
+    display: block; /* Mostrar apenas o primeiro slide */
+}
+
+/* Estilos de Seções */
+/* Estilos da seção topo-do-site */
+
+.topo-do-site {
+  position: relative; /* Para o contexto de posicionamento */
+  padding: 60px 0; /* Ajuste o padding conforme necessário */
+  text-align: center;
+  background-color: #ffffff; /* Cor de fundo */
+}
+
+.topo-do-site h1 {
+  position: absolute; /* Faz o título flutuar acima do texto */
+  top: 20%; /* Ajuste conforme necessário */
+  left: 50%;
+  transform: translateX(-50%); /* Centraliza horizontalmente */
+  font-size: 2.5em; /* Ajuste conforme necessário */
+  z-index: 10; /* Garante que o texto fique acima */
+  color: black; /* Cor do texto */
+}
+
+.topo-do-site p {
+  margin-top: 200px; /* Espaço para o título */
+  font-size: 1.2em; /* Ajuste conforme necessário */
+}
+
+.topo-do-site span {
+    color: #72b1fa;
+}
+
+.especialidades {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.interface {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.titulo {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.titulo span {
+  color: #5a9fff; /* Ajuste a cor conforme sua paleta */
+}
+
+.flex {
+  display: flex;
+  justify-content: center; /* Centraliza os itens */
+  gap: 40px; /* Espaçamento entre os itens */
+  flex-wrap: wrap; /* Garante que os itens fiquem em linha quando não houver espaço */
+}
+
+.especialidades-box {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px; /* Largura padrão */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o conteúdo dentro de cada box */
+}
+
+.especialidades-box i {
+  font-size: 3rem;
+  color: #5a9fff; /* Ajuste a cor conforme necessário */
+}
+
+.especialidades-box h3 {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.especialidades-box p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .especialidades .flex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .especialidades-box {
+    margin-bottom: 30px;
+    max-width: 90%;
+  }
+}
+
+
+

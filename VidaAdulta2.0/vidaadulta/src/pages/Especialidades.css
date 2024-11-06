@@ -1,0 +1,111 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  
+  .card {
+    width: 280px;
+    margin: 20px;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #f7f7f7; /* Cor neutra */
+  }
+  
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .card-image1 {
+    height: 140px;
+    background-color: url;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .card-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    color: #333; /* Texto mais escuro */
+  }
+  
+  .card p {
+    color: #666; /* Texto de descrição em um tom de cinza */
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  @media (max-width: 768px) {
+    .card-container {
+      justify-content: center;
+    }
+    
+    .card {
+      width: 100%;
+      max-width: 350px;
+    }
+  }
+
+.search-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 1000vh; 
+}
+
+.search-input {
+  width: 100%; /* Ocupa toda a largura do contêiner */
+  max-width: 1850px; /* Largura máxima para dispositivos maiores */
+  padding: 10px 15px; /* Espaçamento interno */
+  margin: 20px; /* Margem ao redor do campo de busca */
+  border: 1px solid #ccc; /* Borda leve */
+  border-radius: 25px; /* Bordas arredondadas */
+  font-size: 16px; /* Tamanho da fonte */
+  outline: none; /* Remove o contorno padrão */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Transição suave para mudanças */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Efeito de foco no campo de busca */
+.search-input:focus {
+  border-color: #007BFF; /* Cor da borda ao focar */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Sombra mais intensa ao focar */
+}
+
+/* Estilo para o contêiner das cartas */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os cards se ajustem ao espaço */
+  justify-content: center; /* Centraliza os cards */
+  gap: 20px; /* Espaçamento entre os cards */
+}
+
+.tags-container {
+  margin-top: 10px; /* Espaçamento entre a descrição e as tags */
+}
+
+.tag {
+  display: inline-block; /* Para que as tags fiquem lado a lado */
+  background-color: #e0e0e0; /* Cor de fundo mais neutra */
+  color: #333; /* Cor do texto em um tom escuro */
+  padding: 4px 8px; /* Espaçamento interno da tag */
+  border-radius: 3px; /* Borda arredondada */
+  margin-right: 5px; /* Espaçamento entre as tags */
+  font-size: 0.85rem; /* Tamanho da fonte das tags */
+  transition: background-color 0.3s; /* Efeito de transição ao passar o mouse */
+}
+
+.tag:hover {
+  background-color: #d4d4d4; /* Leve escurecimento no hover */
+}
+

@@ -1,0 +1,98 @@
+/* Container principal */
+.especialidades-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+}
+
+/* Barra de busca */
+.especialidades-search-bar {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+}
+
+.especialidades-search-input {
+  width: 100%;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid dos cards */
+.especialidades-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+/* Card específico */
+.especialidades-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.especialidades-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Imagem do card */
+.especialidades-card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9; 
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 15px;
+  background-image: url('../assets/leitrabalhistas.jpg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+
+/* Conteúdo do card */
+.especialidades-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.especialidades-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.especialidades-card-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* Estilo para as tags */
+.especialidades-card-tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.especialidades-card-tag {
+  background-color: #e0e0e0;
+  color: #555;
+  border-radius: 15px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
