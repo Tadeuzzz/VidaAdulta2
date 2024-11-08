@@ -1,0 +1,324 @@
+/* Container principal para os temas */
+.themes-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Estilo dos cards individuais */
+.theme-card {
+  width: 100%;
+  max-width: 400px; /* Ajuste máximo de largura para garantir que o card não fique muito largo */
+  height: auto;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.theme-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.theme-card h3 {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.theme-card p {
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.theme-card button {
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-card button:hover {
+  background-color: #0056b3;
+}
+
+.message {
+  margin-top: 20px;
+  color: #007bff;
+  font-size: 1em;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .theme-card {
+    width: 90%; /* Reduzindo a largura do card em telas pequenas */
+    max-width: none; /* Removendo o limite máximo de largura */
+  }
+
+  .themes-container {
+    gap: 15px; /* Menor espaço entre os cards */
+    padding: 10px;
+  }
+
+  .theme-card h3 {
+    font-size: 1.3em; /* Tamanho do título reduzido */
+  }
+
+  .theme-card p {
+    font-size: 0.9em; /* Tamanho do parágrafo reduzido */
+  }
+
+  .theme-card button {
+    padding: 8px 16px; /* Menor tamanho de botão */
+  }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  .theme-card {
+    width: 45%; /* Cards em duas colunas */
+  }
+
+  .themes-container {
+    gap: 20px;
+  }
+
+  .theme-card h3 {
+    font-size: 1.4em;
+  }
+
+  .theme-card p {
+    font-size: 1em;
+  }
+
+  .theme-card button {
+    padding: 9px 18px;
+  }
+}
+
+/* Para telas grandes de desktop */
+@media (min-width: 1025px) {
+  .theme-card {
+    width: 30%; /* Cards em três colunas */
+  }
+
+  .themes-container {
+    gap: 20px;
+  }
+
+  .theme-card h3 {
+    font-size: 1.5em;
+  }
+
+  .theme-card p {
+    font-size: 1.1em;
+  }
+}
+
+/* Ajustes para a seção de expertise */
+.expertise-area {
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.expertise-area h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.expertise-area h2 span {
+  color: #007bff;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem; 
+  margin-bottom: 30px;
+  color: #333; 
+}
+
+/* Containers de especialidade */
+.specialty-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Ajustando para que os itens se alinhem corretamente em telas menores */
+  gap: 20px; /* Adicionando espaçamento */
+  padding: 20px; 
+}
+
+/* Ajuste nos itens de especialidade */
+.specialty-item {
+  background: #ffffff; 
+  border: 2px solid #5a9fff; 
+  border-radius: 12px; 
+  padding: 30px; 
+  width: 320px; 
+  height: 400px; 
+  margin: 15px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; 
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); 
+}
+
+.specialty-item:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); 
+}
+
+.specialty-item h3 {
+  margin-top: 15px;
+  font-size: 1.5rem;
+  color: #5a9fff; 
+}
+
+.specialty-item p {
+  font-size: 1rem; 
+  color: #666;
+  margin-top: 10px; 
+}
+
+/* Ajuste para os ícones se houver */
+.specialty-item i {
+  font-size: 3rem; 
+  color: #5a9fff; 
+  margin-bottom: 10px; 
+}
+
+/* Tema claro */
+.home-container.light {
+  background-color: #fff;
+  color: #333;
+}
+
+.home-container.light .hero-section {
+  background-color: #f4f4f4;
+}
+
+.home-container.light .section-title,
+.home-container.light .specialty-item h3 {
+  color: #333;
+}
+
+.home-container.light .specialty-item {
+  background: #ffffff;
+  border: 2px solid #5a9fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Tema escuro */
+.home-container.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.home-container.dark .hero-section {
+  background-color: #444;
+}
+
+.home-container.dark .section-title,
+.home-container.dark .specialty-item h3 {
+  color: #ddd;
+}
+
+.home-container.dark .specialty-item {
+  background: #555;
+  border: 2px solid #5eabff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para o botão de troca de tema */
+.theme-toggle-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.theme-toggle-button:hover {
+  background-color: #0056b3;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+  border-bottom: 2px solid #ddd; /* Linha de separação sutil */
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.hero-section h1 span {
+  color: #007bff;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem; /* Reduzindo o tamanho do título para telas pequenas */
+  }
+
+  .hero-section p {
+    font-size: 1rem; /* Ajustando o texto da descrição */
+    margin-bottom: 15px; /* Menor espaçamento abaixo do parágrafo */
+  }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  .hero-section h1 {
+    font-size: 2.2rem; /* Tamanho do título levemente reduzido */
+  }
+
+  .hero-section p {
+    font-size: 1.1rem; /* Ajuste para tablets */
+    margin-bottom: 20px;
+  }
+}
+
+/* Responsividade para telas grandes */
+@media (min-width: 1025px) {
+  .hero-section {
+    padding: 60px 40px; /* Aumentando o padding para telas grandes */
+  }
+
+  .hero-section h1 {
+    font-size: 3rem; /* Aumentando o tamanho do título */
+  }
+
+  .hero-section p {
+    font-size: 1.5rem; 
+  }
+
+}

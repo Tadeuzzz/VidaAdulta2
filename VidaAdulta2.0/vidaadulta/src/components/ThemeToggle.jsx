@@ -1,8 +1,8 @@
-// src/components/ThemeSelector.js
+// src/components/ThemeToggle.js
 import React from 'react';
-import { useTheme } from '../context/ThemeProvider';
+import { useTheme } from '../context/ThemeContext';
 
-const ThemeSelector = () => {
+const ThemeToggle = () => {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
@@ -12,4 +12,4 @@ const ThemeSelector = () => {
   );
 };
 
-export default ThemeSelector;
+export default ThemeToggle;

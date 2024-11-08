@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "../../services/firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { db } from "../../services/firebaseConfig"; // Importando o Firestore
-import { doc, getDoc } from "firebase/firestore"; // Importando funções do Firestore
+import { db } from "../../services/firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import './PerfilDetalhes.css';
 import VotingSystem from "../../components/VotingSystem";
+import './PerfilDetalhes.css';
 
 export function PerfilDetalhes() {
   const [user] = useAuthState(auth);
@@ -14,7 +14,7 @@ export function PerfilDetalhes() {
   const [phone, setPhone] = useState("");
   const [cpf, setCpf] = useState("");
   const [profileImage, setProfileImage] = useState(null);
-  const [badges, setBadges] = useState([]);
+  const [userVotes, setUserVotes] = useState({});
 
   useEffect(() => {
     if (user) {
@@ -28,19 +28,7 @@ export function PerfilDetalhes() {
           setPhone(data.phone || "");
           setCpf(data.cpf || "");
           setProfileImage(data.profileImage || null);
-
-          // Lógica para badges
-          let userBadges = [];
-          if (data.votes && data.votes.length > 0) {
-            userBadges.push("Participante Regular");
-          }
-          if (data.name && data.phone && data.cpf) {
-            userBadges.push("Perfil Completo");
-          }
-          if (data.firstVote) {
-            userBadges.push("Primeiro Voto");
-          }
-          setBadges(userBadges);
+          setUserVotes(data.votes || {});
         }
       };
 
@@ -50,10 +38,10 @@ export function PerfilDetalhes() {
 
   return (
     <div className="perfil-detalhes-container">
-      <Header avatar={profileImage} /> {/* Passa a imagem para o Header */}
+      <Header />
       {user ? (
         <div className="perfil-detalhes-content">
-          <h1>Detalhes do Perfil</h1>
+          <h1>Perfil</h1>
           {profileImage && (
             <img
               src={profileImage}
@@ -65,19 +53,19 @@ export function PerfilDetalhes() {
           <p><strong>Telefone:</strong> {phone}</p>
           <p><strong>CPF:</strong> {cpf}</p>
           
-          {/* Exibindo Insígnias */}
-          <div className="badges-container">
-            {badges.map((badge, index) => (
-              <span key={index} className="badge">
-                {badge}
-              </span>
+          <h2>Registros Lidos</h2>
+          <ul className="votos-lista">
+            {Object.keys(userVotes).map((vote, index) => (
+              <li key={index} className={userVotes[vote] ? 'voto-realizado' : ''}>
+                {vote}
+                {userVotes[vote] && <span className="estrela">⭐</span>}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       ) : (
         <p className="perfil-detalhes-loading">Carregando detalhes do perfil...</p>
       )}
-      <VotingSystem />
       <Footer />
     </div>
   );

@@ -1,55 +1,71 @@
-/* Estilos gerais para o container de temas */
+/* Container principal para os cards */
 .themes-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 20px;
   justify-content: center;
-  gap: 20px; /* Espaçamento entre os cards */
   padding: 20px;
 }
 
-/* Estilos para cada card de tema */
+/* Estilo dos cards individuais */
 .theme-card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Ajuste de largura */
+  height: auto; /* Altura automática para adaptação ao conteúdo */
+  background-color: #f9f9f9; /* Cor de fundo leve */
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
-  width: 280px;
   text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
 }
 
+/* Efeito de hover nos cards */
 .theme-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: #f9fafb;
 }
 
-/* Título e descrição do card */
+/* Título do card */
 .theme-card h3 {
-  font-size: 18px;
+  font-size: 18px; /* Tamanho da fonte do título ajustado */
   color: #333;
-  margin-bottom: 10px;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
+/* Descrição do card */
 .theme-card p {
-  font-size: 14px;
+  font-size: 14px; /* Tamanho da fonte da descrição ajustado */
   color: #666;
   margin-bottom: 20px;
+  line-height: 1.5;
+  flex-grow: 1; /* Faz a descrição ocupar o espaço disponível */
 }
 
 /* Estilos para o botão de votação dentro do card */
 .theme-card button {
-  padding: 10px 15px;
-  font-size: 14px;
+  padding: 10px 18px; /* Ajustei o tamanho do botão */
+  font-size: 14px; /* Tamanho do texto do botão ajustado */
   color: #fff;
+  background-color: #007bff;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Estilos para o botão não votado */
-.theme-card button:not([disabled]) {
-  background-color: #28a745;
+/* Efeito de hover no botão */
+.theme-card button:not([disabled]):hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 /* Estilos para o botão desabilitado (votado) */
@@ -59,14 +75,28 @@
   text-decoration: line-through;
 }
 
-.theme-card button:not([disabled]):hover {
-  background-color: #218838;
-}
-
 /* Mensagens de status */
 .message {
   text-align: center;
-  font-size: 14px;
-  color: #666;
-  margin-top: 20px;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+/* Responsividade: ajustar para telas menores */
+@media (max-width: 768px) {
+  .themes-container {
+    padding: 20px;
+  }
+
+  .theme-card {
+    width: 100%;
+    max-width: 280px; /* Ajustei a largura máxima para um tamanho mais compacto em telas pequenas */
+  }
+
+  .theme-card button {
+    padding: 10px;
+    font-size: 14px;
+  }
 }

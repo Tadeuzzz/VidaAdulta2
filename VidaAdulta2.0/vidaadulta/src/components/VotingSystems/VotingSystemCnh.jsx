@@ -1,28 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../services/firebaseConfig";
+import { db } from "../../services/firebaseConfig";
 import { setDoc, doc, getDoc, updateDoc } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../services/firebaseConfig";
+import { auth } from "../../services/firebaseConfig";
 import { Link } from 'react-router-dom'; // Importando o Link para navegação
-import "./VotingSystem.css"; // Certifique-se de importar o CSS
+import "../VotingSystem.css"; // Certifique-se de importar o CSS
 
-function VotingSystem() {
+function VotingSystemCnh() {
   const themes = [
-    { title: "Responsabilidades Financeiras", description: "Ensinamos a administrar suas finanças de forma responsável, cobrindo temas como orçamento, dívidas, investimentos e planejamento de gastos futuros." },
-    { title: "Alistamento", description: "Orientamos você no processo completo de alistamento militar, garantindo que cumpra seus deveres cívicos de forma simples e eficiente." },
-    { title: "Título de Eleitor", description: "Aprenda a emitir e utilizar seu título de eleitor, garantindo sua participação ativa nas eleições." },
-    { title: "Registro Geral", description: "Saiba como tirar ou renovar seu RG, documento essencial para sua identificação civil." },
-    { title: "Carteira Nacional de Habilitação (CNH)", description: "Guiamos você pelos passos necessários para obter sua CNH e dirigir legalmente no Brasil." },
-    { title: "Direitos e Deveres", description: "Entenda seus direitos e deveres como cidadão para exercer plenamente sua cidadania." },
-    { title: "Planejador Financeiro Básico", description: "Oferecemos ferramentas práticas para organizar suas finanças pessoais e atingir suas metas econômicas." },
-    { title: "Diretrizes", description: "Apresentamos diretrizes importantes para ajudá-lo a tomar decisões conscientes e responsáveis na vida cotidiana." },
-    { title: "Guia de Independência Pessoal", description: "Fornecemos um guia prático para desenvolver sua autonomia e tomar o controle de sua vida." },
-    { title: "Guia de Carreira e Educação", description: "Ajudamos você a planejar sua trajetória educacional e profissional, maximizando seu potencial e oportunidades no mercado de trabalho." },
-    { title: "Leis Trabalhistas", description: "Entenda as leis que regem o ambiente de trabalho e seus direitos como trabalhador." },
-    { title: "Direitos Civis", description: "Garantia de que ninguém seja privado de sua vida de forma arbitrária." },
-    { title: "Direitos Políticos", description: "Garantia de que ninguém seja privado de sua vida de forma arbitrária." },
-    { title: "Direitos Humanos", description: "Garantia de que ninguém seja privado de sua vida de forma arbitrária." },
-  ];
+    { title: "Carteira de Motorista", description: "Guiamos você pelos passos necessários para obter sua CNH e dirigir legalmente no Brasil." },
+];
 
   const [votes, setVotes] = useState({});
   const [userVotes, setUserVotes] = useState({});
@@ -118,4 +105,4 @@ function VotingSystem() {
   );
 }
 
-export default VotingSystem;
+export default VotingSystemCnh;
