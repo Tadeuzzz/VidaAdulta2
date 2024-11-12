@@ -51,7 +51,7 @@
   object-fit: cover;
   border-radius: 8px 8px 0 0;
   margin-bottom: 15px;
-  background-image: url('../assets/direitoscivis.jpg'); 
+  background-image: url('../../assets/direitoscivis.jpg'); 
   background-size: cover;
   background-position: center;
 }
