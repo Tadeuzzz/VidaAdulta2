@@ -5,6 +5,7 @@ import { auth, db } from "../../services/firebaseConfig"; // Importando o Firest
 import { doc, setDoc } from "firebase/firestore"; // Importando funções do Firestore
 import Logo from "../../assets/logo.png";
 import "./login.css";
+import Header2 from "../../components/HeaderLoginRegister";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -43,41 +44,13 @@ export function Login() {
     }
   }, [user, error, navigate]);
 
- if (loading) {
+  if (loading) {
     return <p>Carregando...</p>;
   }
 
   return (
     <div className="container">
-      <header>
-        <div className="interface">
-          <div className="logo">
-            <a href="/home" className="logo-link">
-              <img src={Logo} alt="Logo da Vida Adulta" className="logo-img" />
-            </a>
-          </div>
-
-          <nav className="menu-desktop">
-            <ul className="menu-list">
-              <li className="menu-item">
-                <a href="/" className="menu-link">Início</a>
-              </li>
-              <li className="menu-item">
-                <a href="/" className="menu-link">Especialidades</a>
-              </li>
-              <li className="menu-item">
-                <a href="/" className="menu-link">Sobre</a>
-              </li>
-              <li className="menu-item">
-                <a href="/" className="menu-link">Feedback</a>
-              </li>
-              <li className="menu-item">
-                <a href="/" className="menu-link">Contato</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header2 />
       <form onSubmit={handleSignIn}>
         <div className="inputContainer">
           <label htmlFor="email">E-mail</label>
@@ -111,14 +84,14 @@ export function Login() {
           Entrar
         </button>
 
-        <div className="footer">
+        <div className="footer-container">
           <p>Você não tem uma conta?</p>
           <Link to="/register">Crie a sua conta aqui</Link>
         </div>
       </form>
 
-      {/* Footer */}
-      <footer>
+      {/* Footer adicionado diretamente no código */}
+      <footer className="custom-footer">
         <div className="interface2">
           <div className="flex">
             <div className="logo-footer">

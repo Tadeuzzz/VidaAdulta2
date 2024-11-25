@@ -1,3 +1,4 @@
+/* Estilo para o Header */
 header {
   background: rgb(252, 252, 252);
   background: linear-gradient(90deg, rgba(252, 252, 252, 1) 0%, rgba(106, 106, 252, 1) 34%, rgba(0, 212, 255, 1) 100%);
@@ -6,9 +7,9 @@ header {
   left: 0; /* Alinha à esquerda */
   width: 100%; /* Largura total */
   z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
-  
 }
 
+/* Estilos para o conteúdo da página, para garantir que não sobreponha o header fixo */
 header > .interface {
   display: flex;
   align-items: center;
@@ -22,6 +23,7 @@ header a {
   transition: 0.2s; /* Transição suave para hover */
 }
 
+/* Estilos para o menu de navegação */
 header .menu-desktop {
   justify-content: center;
   margin-left: 50px;
@@ -78,4 +80,28 @@ nav ul li a:hover {
 
 .user-link {
   text-decoration: none;
+}
+
+/* Estilo para o botão de logout */
+.logout-button {
+  background: none; /* Sem fundo */
+  border: none; /* Remove a borda */
+  padding: 0; /* Sem preenchimento */
+  cursor: pointer; /* Indica que é clicável */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo do ícone de logout */
+.logout-icon {
+  width: 2px; /* Tamanho do ícone */
+  height: 2px;
+}
+
+
+/* Estilo do ícone de logout dentro do botão */
+.logout-button img {
+  width: 30%;
+  height: 30%;
 }

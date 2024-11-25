@@ -1,19 +1,44 @@
-.container {
-  margin-top: 250px;
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-.container .header {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 40px;
+/* Garante que o body e html ocupem toda a altura da janela */
+body, html {
+  height: 100%;  /* Ocupa toda a altura da tela */
+  margin: 0;  /* Remove margens padrões */
 }
 
+/* Garante que a página ocupe a altura total da tela */
+.container {
+  width: 100%;
+  height: 100%;  /* Ocupa toda a altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;  /* Espaço entre Header, Formulário e Footer */
+}
+
+/* Evita rolagem dentro do container */
+.container .header {
+  flex: 0 0 auto;  /* Evita que o Header se expanda, mantendo o tamanho fixo */
+}
+
+/* O formulário ocupa o espaço restante */
+.container form {
+  flex: 1 0 auto;  /* O formulário ocupa o restante do espaço */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;  /* Alinha o conteúdo no centro vertical */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* O Footer ocupa a parte inferior da tela */
+footer {
+  flex: 0 0 auto;  /* O footer ocupa apenas o espaço necessário */
+  background-color: white;
+  padding: 20px 0;
+  border-top: 2px solid #007bff;
+  z-index: 1000;
+}
+
+/* Estilo para o Header */
 .container .header span {
   font-weight: 500;
   font-size: 20px;
@@ -21,28 +46,23 @@
   padding-top: 15px;
 }
 
-.container form {
-  margin-top: 100px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 200px;
-}
-
-.container form  .inputContainer {
+/* Estilo dos containers de input */
+.container form .inputContainer {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
 
-.container form  .inputContainer label {
+/* Estilo dos labels dos inputs */
+.container form .inputContainer label {
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
   margin-bottom: 8px;
 }
 
-.container form  .inputContainer input {
+/* Estilo dos inputs */
+.container form .inputContainer input {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -52,9 +72,9 @@
   border: 1px solid #5C73DB;
   border-radius: 12px;
   margin-bottom: 12px;
-
 }
 
+/* Estilo do link de "esqueceu sua senha?" */
 .container form a {
   font-weight: 400;
   font-size: 16px;
@@ -64,6 +84,7 @@
   color: #5C73DB;
 }
 
+/* Estilo do botão de login */
 .container form .button {
   width: 520px;
   height: 48px;
@@ -76,24 +97,26 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
-
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
 }
+
 .container form .button:hover {
   cursor: pointer;
   opacity: 0.8;
 }
 
+/* Estilo do footer dentro do formulário */
 .container form .footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px
+  gap: 10px;
 }
 
+/* Estilo do texto do footer */
 .container form .footer p {
   font-weight: 400;
   font-size: 16px;
@@ -101,6 +124,7 @@
   color: #000000;
 }
 
+/* Estilo do link de "crie sua conta" no footer */
 .container form .footer a {
   font-weight: 400;
   font-size: 16px;
@@ -109,7 +133,60 @@
   color: #5C73DB;
 }
 
+/* Estilo da mensagem de erro */
 .errorMessage {
   color: red; 
   margin-top: 10px; 
+}
+
+/* Footer */
+footer .interface2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+footer .logo-footer img {
+  width: 150px;
+}
+
+footer .btn-social {
+  display: flex;
+  gap: 15px;
+}
+
+footer .btn-social button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+footer .btn-social button:hover {
+  background-color: #0056b3;
+}
+
+footer .btn-social i {
+  font-size: 24px;
+}
+
+footer .btn-social a {
+  display: inline-block;
 }

@@ -36,14 +36,6 @@ const Sobre = () => {
                         <p>Em resumo, direitos e deveres cidadãos formam a base para uma convivência harmoniosa e um desenvolvimento sustentável, garantindo que todos os indivíduos tenham a oportunidade de viver com dignidade, liberdade e igualdade dentro de uma sociedade democrática.</p>
                         
                         <br />
-                        <div className="buttons-container">
-                            <div className="button" id="like-btn">
-                                👍 <span id="like-count">0</span>
-                            </div>
-                            <div className="button" id="dislike-btn">
-                                👎 <span id="dislike-count">0</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

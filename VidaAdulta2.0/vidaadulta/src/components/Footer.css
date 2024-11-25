@@ -1,61 +1,62 @@
+/* Estilos do Footer */
 footer {
-    background-color: white;
-    padding: 20px 0;
-    border-top: 2px solid #007bff; /* Linha acima do footer */
-    bottom: 0; /* Alinha ao fundo */
-    left: 0; /* Alinha à esquerda */
-    width: 100%; /* Largura total */
-    z-index: 1000; /* Garante que o footer fique acima de outros elementos */
-  }
-  
-  footer .interface2 {
-    max-width: 1200px; /* Largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza horizontalmente */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  footer .flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%; /* Preenche toda a largura do footer */
-  }
-  
-  footer .logo-footer img {
-    width: 150px; /* Ajuste o tamanho conforme a necessidade */
-  }
-  
-  footer .btn-social {
-    display: flex;
-    gap: 15px; /* Espaçamento entre os botões sociais */
-  }
-  
-  footer .btn-social button {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    font-size: 24px;
-    width: 50px; /* Tamanho do círculo dos ícones */
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  footer .btn-social button:hover {
-    background-color: #0056b3; /* Cor ao passar o mouse */
-  }
-  
-  footer .btn-social i {
-    font-size: 24px; /* Tamanho do ícone dentro do botão */
-  }
-  
-  footer .btn-social a {
-    display: inline-block;
-  }
-  
+  background-color: white;
+  padding: 20px 0;
+  border-top: 2px solid #007bff; /* Linha acima do footer */
+  position: fixed; /* Torna o footer fixo na parte inferior */
+  left: 0; /* Alinha à esquerda */
+  bottom: 0; /* Fixa o footer na parte inferior */
+  width: 100%; /* Largura total */
+  z-index: 1000; /* Garante que o footer fique acima de outros elementos */
+}
+
+footer .interface2 {
+  max-width: 1200px; /* Largura máxima do conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Preenche toda a largura do footer */
+}
+
+footer .logo-footer img {
+  width: 150px; /* Ajuste o tamanho conforme a necessidade */
+}
+
+footer .btn-social {
+  display: flex;
+  gap: 15px; /* Espaçamento entre os botões sociais */
+}
+
+footer .btn-social button {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 50px; /* Tamanho do círculo dos ícones */
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+footer .btn-social button:hover {
+  background-color: #0056b3; /* Cor ao passar o mouse */
+}
+
+footer .btn-social i {
+  font-size: 24px; /* Tamanho do ícone dentro do botão */
+}
+
+footer .btn-social a {
+  display: inline-block;
+}

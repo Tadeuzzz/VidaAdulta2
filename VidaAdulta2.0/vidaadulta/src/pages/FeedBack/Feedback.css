@@ -1,90 +1,174 @@
-/* Estilo global */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-  }
-  
-  /* Cookie Banner */
-  .cookie-banner {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .cookie-buttons button {
-    background-color: #72b1fa;
-    border: none;
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .cookie-buttons button:hover {
-    background-color: #5a9ae0;
-  }
-  
-  /* Header */
-  header {
-    background-color: white;
-    padding: 20px 4%;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  header .interface {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Formulário */
-  .formulario {
-    padding: 40px 4%;
-    background-color: #f8f9fa;
-    text-align: center;
-  }
-  
-  .formulario form input, .formulario form textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  /* Testimonial Carousel */
-  .carousel-wrapper {
-    padding: 40px 4%;
-  }
-  
-  .testimonial-item {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  .testimonial-item img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-  }
-  
-  .testimonial-carousel {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .carousel-controls button {
-    background: none;
-    border: none;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-  
+/* Estilo para o formulário */
+.formulario {
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to top right, #f9f9f9, #e0e0e0); /* Adiciona um leve gradiente */
+}
+
+
+/* Estilo do formulário */
+.interface form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Estilo dos inputs e textarea */
+.interface form input,
+.interface form textarea {
+  width: 680px;
+  padding: 14px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.interface form input:focus,
+.interface form textarea:focus {
+  border-color: #4763E4;
+  box-shadow: 0 0 5px rgba(71, 99, 228, 0.5);
+}
+
+/* Estilo do botão */
+.btn-enviar input {
+  padding: 12px;
+  background-color: #4763E4;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.btn-enviar input:hover {
+  background-color: #3754d4;
+  transform: translateY(-2px); /* Efeito de elevação */
+}
+
+.btn-enviar input:active {
+  transform: translateY(0); /* Retorna à posição original ao clicar */
+}
+
+/* Estilos para o carousel de feedbacks */
+.carousel-wrapper {
+  margin-top: 50px;
+}
+
+.testimonial-carousel {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* Estilo para cada item de feedback */
+.testimonial-item {
+  display: flex;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  background: #fff;
+  border-left: 5px solid #4763E4; /* Linha lateral para destacar o card */
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px); /* Efeito de elevação */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para a imagem do perfil */
+.profile-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover; /* Mantém a imagem proporcional */
+  border: 2px solid #4763E4; /* Borda colorida ao redor da imagem */
+}
+
+/* Estilo para o conteúdo do comentário */
+.testimonial-item .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 80%;
+}
+
+.testimonial-item .content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  font-style: italic;
+}
+
+.testimonial-item .content span {
+  font-weight: 600;
+  font-size: 18px;
+  color: #4763E4;
+  margin-top: 10px;
+}
+
+/* Estilo para a rolagem do carousel */
+.testimonial-carousel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.testimonial-carousel::-webkit-scrollbar-thumb {
+  background-color: #4763E4;
+  border-radius: 4px;
+}
+
+.testimonial-carousel::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+
+/* Estilos para as estrelas */
+/* Estilo para estrelas preenchidas e vazias */
+.filled-star {
+  color: #f39c12; /* Cor dourada para as estrelas preenchidas */
+}
+
+.empty-star {
+  color: #ccc; /* Cor cinza para as estrelas vazias */
+}
+
+/* Estilo para o container de estrelas */
+.stars-rating {
+  margin-top: 10px;
+  font-size: 24px;
+  display: flex;
+  gap: 5px;
+}
+
+/* Estilo para a seção de filtro de estrelas */
+.filter-stars {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-stars select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.filter-stars label {
+  font-size: 18px;
+  margin-right: 10px;
+}

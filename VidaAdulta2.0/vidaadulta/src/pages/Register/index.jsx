@@ -6,7 +6,7 @@ import { doc, setDoc } from "firebase/firestore"; // Importando funções do Fir
 import logoImg from "../../assets/logo.png";
 import "./styles.css";
 import Header2 from "../../components/HeaderLoginRegister";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer2";
 
 export function Register() {
   const [email, setEmail] = useState("");

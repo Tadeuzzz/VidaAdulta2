@@ -71,3 +71,10 @@ button {
 button:hover {
   background-color: #0056b3; /* Cor mais escura ao passar o mouse */
 }
+
+.success-message {
+  color: green;
+  font-size: 18px;
+  margin-top: 20px;
+  text-align: center;
+}

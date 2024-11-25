@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './contato.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { db } from '../../services/firebaseConfig'; // Importando o Firebase
+import { addDoc, collection } from 'firebase/firestore'; // Importando funções do Firestore
 
 const ContatoPage = () => {
   const [formData, setFormData] = useState({
@@ -17,16 +19,47 @@ const ContatoPage = () => {
     genero: 'masculino', // Default
     regiao: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false); // Estado para saber se está enviando
+  const [successMessage, setSuccessMessage] = useState(""); // Mensagem de sucesso
 
+  // Função para atualizar os dados do formulário
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  // Função para salvar os dados no Firebase
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Aqui você pode enviar os dados para o servidor ou processar como desejar.
+    setIsSubmitting(true); // Definindo como "enviando"
+
+    try {
+      // Enviando os dados para o Firestore
+      await addDoc(collection(db, "contatos"), formData);
+
+      // Exibindo a mensagem de sucesso após o envio
+      setSuccessMessage("Seu formulário foi enviado com sucesso!");
+
+      // Limpar o formulário após o envio
+      setFormData({
+        nome: '',
+        email: '',
+        telefone: '',
+        dataNascimento: '',
+        endereco: '',
+        endereco2: '',
+        estado: '',
+        cidade: '',
+        cep: '',
+        genero: 'masculino',
+        regiao: ''
+      });
+    } catch (error) {
+      console.error("Erro ao enviar o formulário:", error);
+      setSuccessMessage("Ocorreu um erro ao enviar seu formulário. Tente novamente.");
+    } finally {
+      setIsSubmitting(false); // Finaliza o estado de envio
+    }
   };
 
   return (
@@ -34,6 +67,10 @@ const ContatoPage = () => {
       <Header /> {/* Adiciona o cabeçalho ao componente */}
       <section className="container2">
         <header className='Contato'>Contato</header>
+        
+        {/* Se a mensagem de sucesso estiver disponível, exibe ela */}
+        {successMessage && <div className="success-message">{successMessage}</div>}
+        
         <form className="form" onSubmit={handleSubmit}>
           <div className="inputContainer">
             <label htmlFor="nome">Nome Completo</label>
@@ -42,6 +79,7 @@ const ContatoPage = () => {
               name="nome"
               id="nome"
               placeholder="Coloque seu nome completo"
+              value={formData.nome}
               onChange={handleChange}
               required
             />
@@ -54,6 +92,7 @@ const ContatoPage = () => {
               name="email"
               id="email"
               placeholder="Coloque seu e-mail"
+              value={formData.email}
               onChange={handleChange}
               required
             />
@@ -66,6 +105,7 @@ const ContatoPage = () => {
               name="telefone"
               id="telefone"
               placeholder="Coloque seu número"
+              value={formData.telefone}
               onChange={handleChange}
               required
             />
@@ -77,6 +117,7 @@ const ContatoPage = () => {
               type="date"
               name="dataNascimento"
               id="dataNascimento"
+              value={formData.dataNascimento}
               onChange={handleChange}
               required
             />
@@ -89,6 +130,7 @@ const ContatoPage = () => {
               name="endereco"
               id="endereco"
               placeholder="Coloque seu endereço"
+              value={formData.endereco}
               onChange={handleChange}
               required
             />
@@ -101,6 +143,7 @@ const ContatoPage = () => {
               name="endereco2"
               id="endereco2"
               placeholder="Coloque seu endereço 2"
+              value={formData.endereco2}
               onChange={handleChange}
             />
           </div>
@@ -112,6 +155,7 @@ const ContatoPage = () => {
               name="estado"
               id="estado"
               placeholder="Estado"
+              value={formData.estado}
               onChange={handleChange}
               required
             />
@@ -124,6 +168,7 @@ const ContatoPage = () => {
               name="cidade"
               id="cidade"
               placeholder="Cidade"
+              value={formData.cidade}
               onChange={handleChange}
               required
             />
@@ -136,6 +181,7 @@ const ContatoPage = () => {
               name="cep"
               id="cep"
               placeholder="CEP"
+              value={formData.cep}
               onChange={handleChange}
               required
             />
@@ -183,6 +229,7 @@ const ContatoPage = () => {
             <select
               name="regiao"
               id="regiao"
+              value={formData.regiao}
               onChange={handleChange}
               required
             >
@@ -195,7 +242,9 @@ const ContatoPage = () => {
             </select>
           </div>
 
-          <button type="submit">Enviar</button>
+          <button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? 'Enviando...' : 'Enviar'}
+          </button>
         </form>
       </section>
       <Footer />
