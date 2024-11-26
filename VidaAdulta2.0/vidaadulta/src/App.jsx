@@ -26,6 +26,7 @@ import DireitosHumanos from './pages/DireitosHumanos/DireitosHumanos.jsx';
 import Perfil from './pages/Perfil/Perfil.jsx';
 import PerfilDetalhes from './pages/PerfilDetalhes/PerfilDetalhes.jsx';
 import { ThemeProvider } from './context/ThemeProvider.jsx';  // Importando o ThemeProvider
+import Restrita from './pages/Restrita/Restrita.jsx';
 
 const App = () => {
   const [avatar, setAvatar] = useState(null);
@@ -62,6 +63,7 @@ const App = () => {
             <Route path="/DireitosHumanos" element={<DireitosHumanos />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/perfildetalhes" element={<PerfilDetalhes />} />
+            <Route path="/pagina-restrita" element={<Restrita />} />
           </Routes>
         </div>
       </Router>

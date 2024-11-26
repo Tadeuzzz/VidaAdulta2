@@ -55,3 +55,31 @@ p {
   margin-left: 5px;
   font-weight: bold; 
 }
+
+.alerta {
+  background-color: #ffcc00;
+  padding: 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.alerta strong {
+  color: red;
+}
+
+.btn-ver-mais {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.btn-ver-mais:hover {
+  background-color: #0056b3;
+}

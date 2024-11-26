@@ -6,7 +6,7 @@ import { auth } from "../../services/firebaseConfig";
 import { Link } from 'react-router-dom'; // Importando o Link para navegação
 import "../VotingSystem.css"; // Certifique-se de importar o CSS
 
-function VotingSystemAlistamento() {
+function VotingSystemResponsabilidades() {
   const themes = [
     { title: "Responsabilidades Financeiras", description: "Ensinamos a administrar suas finanças de forma responsável, cobrindo temas como orçamento, dívidas, investimentos e planejamento de gastos futuros."},
 ];
@@ -105,4 +105,4 @@ function VotingSystemAlistamento() {
   );
 }
 
-export default VotingSystemAlistamento;
+export default VotingSystemResponsabilidades;

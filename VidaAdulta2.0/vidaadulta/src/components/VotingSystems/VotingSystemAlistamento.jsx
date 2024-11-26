@@ -8,7 +8,8 @@ import "../VotingSystem.css"; // Certifique-se de importar o CSS
 
 function VotingSystemAlistamento() {
   const themes = [
-    { title: "Responsabilidades", description: "Orientamos você no processo completo de alistamento militar, garantindo que cumpra seus deveres cívicos de forma simples e eficiente." },
+    { title: "Alistamento Militar", description: "Informações e orientações para o processo de alistamento militar obrigatório e suas etapas." },
+
 ];
 
   const [votes, setVotes] = useState({});

@@ -6,7 +6,7 @@ import { auth } from "../../services/firebaseConfig";
 import { Link } from 'react-router-dom'; // Importando o Link para navegação
 import "../VotingSystem.css"; // Certifique-se de importar o CSS
 
-function VotingSystemAlistamento() {
+function VotingSystemTitulo() {
   const themes = [
     { title: "Titulo de Eleitor", description: "Aprenda a emitir e utilizar seu título de eleitor, garantindo sua participação ativa nas eleições."},
 ];
@@ -105,4 +105,4 @@ function VotingSystemAlistamento() {
   );
 }
 
-export default VotingSystemAlistamento;
+export default VotingSystemTitulo;

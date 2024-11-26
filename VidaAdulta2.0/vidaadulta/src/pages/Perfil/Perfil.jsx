@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { auth } from "../../services/firebaseConfig";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { db } from "../../services/firebaseConfig"; // Importando o Firestore
-import { doc, setDoc, getDoc } from "firebase/firestore"; // Importando funções do Firestore
+import { db } from "../../services/firebaseConfig"; 
+import { doc, setDoc, getDoc } from "firebase/firestore"; 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import './Perfil.css';
-import InputMask from 'react-input-mask'; // Importando a biblioteca para máscara
-import { useNavigate } from "react-router-dom"; // Importando o useNavigate
+import InputMask from 'react-input-mask'; 
+import { useNavigate } from "react-router-dom"; 
 
 export function Perfil() {
-  const [user] = useAuthState(auth);
+  const [user] = useAuthState(auth); 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [cpf, setCpf] = useState("");
   const [profileImage, setProfileImage] = useState(null);
   const [formVisible, setFormVisible] = useState(true);
-  const [isEditing, setIsEditing] = useState(false); // Estado para controlar a edição
-  const navigate = useNavigate(); // Definindo o navigate para redirecionamento
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (user) {
@@ -53,9 +52,8 @@ export function Perfil() {
     e.preventDefault();
     setFormVisible(false);
 
-    // Validar CPF e Telefone
-    const phoneRegex = /^\(\d{2}\) \d{4}-\d{4}$/; // Máscara de telefone: (XX) XXXX-XXXX
-    const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/; // Máscara de CPF: XXX.XXX.XXX-XX
+    const phoneRegex = /^\(\d{2}\) \d{4}-\d{4}$/; 
+    const cpfRegex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
 
     if (!phoneRegex.test(phone)) {
       alert("Telefone inválido. A formatação correta é (XX) XXXX-XXXX.");
@@ -67,42 +65,24 @@ export function Perfil() {
       return;
     }
 
-    // Salvar os dados no Firestore
     if (user) {
       await setDoc(doc(db, "users", user.uid), {
         name: name,
         phone: phone,
         cpf: cpf,
         profileImage: profileImage,
-      }, { merge: true });
+      }, { merge: true }); 
 
-      // Redireciona para a página Home após o cadastro
-      navigate("/home");
-    }
-  };
 
-  const handleEdit = () => {
-    setIsEditing(true); // Habilita o modo de edição
-  };
-
-  const handleSave = async (e) => {
-    e.preventDefault();
-    setIsEditing(false); // Desabilita o modo de edição
-
-    // Salvar os dados no Firestore
-    if (user) {
-      await setDoc(doc(db, "users", user.uid), {
-        name: name,
-        phone: phone,
-        cpf: cpf,
-        profileImage: profileImage,
-      }, { merge: true });
+      navigate("/perfildetalhes"); 
+    } else {
+      alert("Você precisa estar autenticado para salvar seu perfil.");
     }
   };
 
   return (
     <div className="perfil-container">
-      <Header avatar={profileImage} /> {/* Passa a imagem para o Header */}
+      <Header avatar={profileImage} /> 
       {user ? (
         <div className="perfil-content">
           <h1 className="perfil-welcome">Bem-vindo, {name || user.email}!</h1>

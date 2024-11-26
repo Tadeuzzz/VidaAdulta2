@@ -1,4 +1,4 @@
-import ContentRating from '../../components/ContentRating';
+
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
 import VotingSystemCnh from '../../components/VotingSystems/VotingSystemCnh';

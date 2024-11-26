@@ -1,110 +1,170 @@
+/* Container principal */
 .container {
-    margin-top: 215px;
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  
-  .container .header span {
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 24px;
-    padding-top: 15px;
-  }
-  
+  margin-top: 215px;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Estilo do header */
+.container .header span {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  padding-top: 15px;
+}
+
+/* Formulário */
+.container form {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 200px;
+}
+
+/* Containers de input */
+.container form .inputContainer {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+/* Labels dos inputs */
+.container form .inputContainer label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  margin-bottom: 8px;
+}
+
+/* Inputs */
+.container form .inputContainer input {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 16px;
+  width: 520px;
+  height: 49px;
+  border: 1px solid #5C73DB;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+/* Link de 'esqueceu sua senha?' */
+.container form a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #5C73DB;
+}
+
+/* Botão de ação */
+.container form .button {
+  width: 520px;
+  height: 48px;
+  background: #4763E4;
+  border-radius: 12px;
+  color: #fff;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.container form .button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* Rodapé do formulário */
+.container form .footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Texto do rodapé */
+.container form .footer p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+}
+
+/* Link do rodapé */
+.container form .footer a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration-line: underline;
+  color: #5C73DB;
+}
+
+/* Mensagem de erro */
+.errorMessage {
+  color: red; 
+  margin-top: 10px; 
+}
+
+/* Media Queries para responsividade */
+
+/* Para dispositivos móveis */
+@media (max-width: 768px) {
+  /* Ajusta a largura e o alinhamento do formulário e inputs */
   .container form {
-    margin-top: 100px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-bottom: 200px;
+    margin-top: 50px;
+    margin-bottom: 100px;
   }
-  
-  .container form  .inputContainer {
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
+
+  .container form .inputContainer input {
+    width: 90%; /* Ajusta os inputs para ocupar 90% da largura disponível */
   }
-  
-  .container form  .inputContainer label {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    margin-bottom: 8px;
-  }
-  
-  .container form  .inputContainer input {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 16px;
-    width: 520px;
-    height: 49px;
-    border: 1px solid #5C73DB;
-    border-radius: 12px;
-    margin-bottom: 12px;
-  
-  }
-  
-  .container form a {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-    color: #5C73DB;
-  }
-  
+
   .container form .button {
-    width: 520px;
-    height: 48px;
-    background: #4763E4;
-    border-radius: 12px;
-    color: #fff;
-    border: none;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-  
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+    width: 90%; /* Ajusta o botão para ocupar 90% da largura */
   }
-  .container form .button:hover {
-    cursor: pointer;
-    opacity: 0.8;
-  }
-  
+
+  /* Alinha o footer em coluna em telas pequenas */
   .container form .footer {
-    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px
   }
   
-  .container form .footer p {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #000000;
-  }
-  
+  /* Ajuste no texto e links do rodapé */
+  .container form .footer p,
   .container form .footer a {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-decoration-line: underline;
-    color: #5C73DB;
+    font-size: 14px;
+    line-height: 16px;
   }
-  
-  .errorMessage {
-    color: red; 
-    margin-top: 10px; 
+}
+
+/* Para tablets e telas médias */
+@media (max-width: 1024px) {
+  /* Ajusta a largura dos inputs e botão */
+  .container form .inputContainer input {
+    width: 80%; /* Ajusta os inputs para ocuparem 80% da largura */
   }
-  
+
+  .container form .button {
+    width: 80%; /* Ajusta o botão para ocupar 80% da largura */
+  }
+
+  /* Ajuste do rodapé */
+  .container form .footer {
+    flex-direction: row; /* Organiza os itens do footer em linha */
+    justify-content: center;
+  }
+}

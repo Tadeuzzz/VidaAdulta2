@@ -2,11 +2,17 @@ import React from 'react';
 import './sobre.css';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import avatar3 from '../../assets/fprvidaadulta.png'; 
+import avatar2 from '../../assets/leovidaadulta.png'; 
+import avatar1 from '../../assets/tadeuvidaadulta.png';
+import avatar4 from '../../assets/mrzvidaadulta.jpg'; 
+import avatar5 from '../../assets/sabinovidaadulta.jpg'; 
+
 
 const Sobre = () => {
   return (
     <main>
-              <Header />
+      <Header />
       <section className="topo-do-site">
         <div className="interface">
           <div className="flex">
@@ -31,6 +37,29 @@ const Sobre = () => {
               </div>
             </div>
 
+            {/* Adicionando os avatares */}
+            <div className="avatar-container">
+              <div className="avatar">
+                <img src={avatar1} alt="Gabriel Athadeu" />
+                <p>Gabriel Athadeu</p>
+              </div>
+              <div className="avatar">
+                <img src={avatar2} alt="Leonardo Xavier" />
+                <p>Leonardo Xavier</p>
+              </div>
+              <div className="avatar">
+                <img src={avatar3} alt="Filippo Peruzzo" />
+                <p>Filippo Peruzzo</p>
+              </div>
+              <div className="avatar">
+                <img src={avatar4} alt="Arthur Moreira" />
+                <p>Arthur Moreira</p>
+              </div>
+              <div className="avatar">
+                <img src={avatar5} alt="Lucas Sabino" />
+                <p>Lucas Sabino</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

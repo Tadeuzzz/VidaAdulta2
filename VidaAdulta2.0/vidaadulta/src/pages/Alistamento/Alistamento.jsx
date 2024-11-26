@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../services/firebaseConfig"; // Importando a configuração do Firebase
-import VotingSystemAlistamento from "../../components/VotingSystems/VotingSystemResponsabilidades";
+import VotingSystemAlistamento from "../../components/VotingSystems/VotingSystemAlistamento";
 
 const Sobre = () => {
     const [user] = useAuthState(auth); // Obtendo o estado do usuário

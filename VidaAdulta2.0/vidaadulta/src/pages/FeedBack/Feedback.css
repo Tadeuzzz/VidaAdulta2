@@ -1,15 +1,15 @@
 /* Estilo para o formulário */
+/* Estilo para o formulário */
 .formulario {
   width: 80%;
-  max-width: 800px;
+  max-width: 335px;
   margin: 0 auto;
   padding: 20px;
   background-color: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  background: linear-gradient(to top right, #f9f9f9, #e0e0e0); /* Adiciona um leve gradiente */
+  background: linear-gradient(to top right, #f9f9f9, #e0e0e0);
 }
-
 
 /* Estilo do formulário */
 .interface form {
@@ -21,7 +21,7 @@
 /* Estilo dos inputs e textarea */
 .interface form input,
 .interface form textarea {
-  width: 680px;
+  width: 100%;
   padding: 14px;
   font-size: 16px;
   border-radius: 10px;
@@ -30,13 +30,31 @@
   transition: all 0.3s ease;
 }
 
+/* Estilo de foco nos inputs e textarea */
 .interface form input:focus,
 .interface form textarea:focus {
   border-color: #4763E4;
   box-shadow: 0 0 5px rgba(71, 99, 228, 0.5);
 }
 
-/* Estilo do botão */
+/* Estilo para a seção de estrelas */
+.stars-rating {
+  margin-top: 10px;
+  font-size: 24px;
+  display: flex;
+  gap: 5px;
+}
+
+/* Estilo para a avaliação por estrelas */
+.filled-star {
+  color: #f39c12;
+}
+
+.empty-star {
+  color: #ccc;
+}
+
+/* Estilo do botão de envio */
 .btn-enviar input {
   padding: 12px;
   background-color: #4763E4;
@@ -57,9 +75,82 @@
   transform: translateY(0); /* Retorna à posição original ao clicar */
 }
 
+/* Media Queries para responsividade */
+
+/* Para dispositivos móveis */
+@media (max-width: 768px) {
+  .interface form input,
+  .interface form textarea {
+    width: 100%; /* Garante que o input e textarea ocuparam toda a largura */
+    padding: 12px; /* Ajuste do padding para telas menores */
+    font-size: 14px; /* Ajuste do tamanho da fonte */
+  }
+
+  .stars-rating {
+    font-size: 20px; /* Ajusta o tamanho das estrelas para dispositivos móveis */
+  }
+
+  .btn-enviar input {
+    font-size: 16px; /* Ajuste no tamanho da fonte do botão */
+    padding: 10px; /* Ajuste no tamanho do botão */
+  }
+}
+
+/* Para telas maiores que 768px */
+@media (min-width: 769px) {
+  .interface form input,
+  .interface form textarea {
+    width: 100%; /* Garante que o input e textarea ocupam toda a largura */
+  }
+  
+  .btn-enviar input {
+    font-size: 18px; /* Fonte maior para telas maiores */
+    padding: 12px; /* Ajuste no tamanho do botão */
+  }
+
+  .stars-rating {
+    font-size: 24px; /* Tamanho maior das estrelas em telas maiores */
+  }
+}
+
+
 /* Estilos para o carousel de feedbacks */
 .carousel-wrapper {
   margin-top: 50px;
+}
+
+.filled-star {
+  color: #f39c12;
+}
+
+.empty-star {
+  color: #ccc; 
+}
+
+.stars-rating {
+  margin-top: 10px;
+  font-size: 24px;
+  display: flex;
+  gap: 5px;
+}
+
+.filter-stars {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.filter-stars select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.filter-stars label {
+  font-size: 18px;
+  margin-right: 10px;
 }
 
 .testimonial-carousel {
@@ -81,8 +172,12 @@
   position: relative;
   background: #fff;
   border-left: 5px solid #4763E4; /* Linha lateral para destacar o card */
+  align-items: center; /* Alinha verticalmente os itens */
+  max-width: 700px;
+  margin: 0 auto;
 }
 
+/* Estilo para o hover do card */
 .testimonial-item:hover {
   transform: translateY(-5px); /* Efeito de elevação */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
@@ -90,8 +185,8 @@
 
 /* Estilo para a imagem do perfil */
 .profile-img {
-  width: 80px;
-  height: 80px;
+  width: 70px; /* Tamanho reduzido para melhor balanceamento */
+  height: 70px; /* Tamanho reduzido para melhor balanceamento */
   border-radius: 50%;
   margin-right: 20px;
   object-fit: cover; /* Mantém a imagem proporcional */
@@ -107,17 +202,18 @@
 }
 
 .testimonial-item .content p {
-  font-size: 18px;
+  font-size: 16px; /* Font menor para não ocupar muito espaço */
   line-height: 1.6;
   color: #555;
   font-style: italic;
+  margin-bottom: 10px; /* Espaçamento entre o texto e o nome */
 }
 
 .testimonial-item .content span {
   font-weight: 600;
   font-size: 18px;
   color: #4763E4;
-  margin-top: 10px;
+  margin-top: 5px; /* Reduzido para não exagerar no espaço */
 }
 
 /* Estilo para a rolagem do carousel */
@@ -134,41 +230,62 @@
   background-color: #f0f0f0;
 }
 
+/* Media Queries para responsividade */
 
-/* Estilos para as estrelas */
-/* Estilo para estrelas preenchidas e vazias */
-.filled-star {
-  color: #f39c12; /* Cor dourada para as estrelas preenchidas */
+/* Para dispositivos móveis */
+@media (max-width: 768px) {
+  .testimonial-item {
+    flex-direction: column; /* Muda para coluna para telas pequenas */
+    align-items: center;
+    max-width: 90%; /* Ajusta o tamanho para ocupar mais espaço */
+    margin: 10px 0; /* Adiciona margem entre os cards */
+    padding: 15px; /* Reduz o padding */
+  }
+
+  .profile-img {
+    width: 60px; /* Ajusta a imagem para dispositivos móveis */
+    height: 60px; /* Ajusta a imagem para dispositivos móveis */
+    margin-bottom: 10px; /* Adiciona espaço abaixo da imagem */
+  }
+
+  .testimonial-item .content {
+    text-align: center; /* Alinha o texto ao centro */
+    max-width: 100%;
+  }
+
+  .testimonial-item .content p {
+    font-size: 14px; /* Ajusta o tamanho do texto */
+  }
+
+  .testimonial-item .content span {
+    font-size: 16px; /* Ajusta o tamanho do nome */
+  }
 }
 
-.empty-star {
-  color: #ccc; /* Cor cinza para as estrelas vazias */
+/* Para telas maiores que 768px */
+@media (min-width: 769px) {
+  .testimonial-item {
+    flex-direction: row; /* Alinha em linha para telas maiores */
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .profile-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .testimonial-item .content {
+    text-align: left; /* Alinha o texto à esquerda */
+    max-width: 80%;
+  }
+
+  .testimonial-item .content p {
+    font-size: 16px; /* Ajusta o tamanho do texto */
+  }
+
+  .testimonial-item .content span {
+    font-size: 18px; /* Ajusta o tamanho do nome */
+  }
 }
 
-/* Estilo para o container de estrelas */
-.stars-rating {
-  margin-top: 10px;
-  font-size: 24px;
-  display: flex;
-  gap: 5px;
-}
-
-/* Estilo para a seção de filtro de estrelas */
-.filter-stars {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.filter-stars select {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  outline: none;
-}
-
-.filter-stars label {
-  font-size: 18px;
-  margin-right: 10px;
-}

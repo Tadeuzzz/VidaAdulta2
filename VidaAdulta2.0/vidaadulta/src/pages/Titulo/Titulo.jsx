@@ -1,6 +1,6 @@
 import Footer from '../../components/Footer';
 import Header from '../../components/Header';
-import VotingSystem from '../../components/VotingSystem';
+import VotingSystemTitulo from '../../components/VotingSystems/VotingSystemTitulo';
 import '../../pages/Sublista.css';
 import React from 'react';
 
@@ -40,6 +40,7 @@ const Sobre = () => {
           </div>
         </div>
       </div>
+      <VotingSystemTitulo />
       <Footer/>
     </section>
   );

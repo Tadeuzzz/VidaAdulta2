@@ -1,6 +1,6 @@
 import React from 'react';
 import './VideoPlayer.css'
-import Video from '../assets/DireitosHumanos2.mp4'
+import Video from '../assets/videos/DireitosHumanos2.mp4'
 
 const VideoPlayer = () => {
   return (

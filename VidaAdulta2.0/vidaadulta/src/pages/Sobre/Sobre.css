@@ -14,6 +14,7 @@ body {
     line-height: 1.2; /* Espaçamento entre linhas */
     color: #222; /* Cor do texto do título */
     margin: 0 0 20px; /* Margem inferior */
+    text-align: center; /* Centraliza o texto */
 }
 
 /* Botão de contato */
@@ -34,47 +35,115 @@ body {
     background-color: #3670C5; /* Azul mais escuro ao passar o mouse */
 }
 
-/* Responsividade para dispositivos móveis */
+/* Responsividade */
 @media (max-width: 768px) {
-    /* Título */
     .txt-topo-site h1 {
-        font-size: 28px; /* Reduzindo o tamanho do título para telas pequenas */
+        font-size: 28px;
         margin-bottom: 15px;
     }
 
-    /* Botão de contato */
     .btn-contato button {
-        font-size: 16px; /* Ajustando o tamanho do texto */
-        padding: 12px 20px; /* Reduzindo o espaçamento interno */
+        font-size: 16px;
+        padding: 12px 20px;
     }
+
+    .avatar img {
+        width: 120px; /* Reduzindo tamanho para telas menores */
+        height: 120px;
+    }
+
+    .avatar::before {
+        width: 140px;
+        height: 140px;
+    }
+
+    .avatar p {
+        font-size: 1rem; /* Texto menor */
+    }
+}
+
+/* Título "Integrantes" */
+.integrantes h2 {
+    text-align: center;
+    font-size: 2.5rem; /* Maior destaque */
+    font-weight: bold;
+    margin: 2rem 0 1.5rem; /* Espaçamento acima e abaixo */
+    color: #333;
+}
+
+/* Contêiner de avatares */
+.avatar-container {
+    margin-top: 10px;
+    display: flex; /* Flexbox para alinhar os itens */
+    justify-content: space-evenly; /* Espaçamento uniforme entre os itens */
+    align-items: center; /* Alinha verticalmente */
+    flex-wrap: nowrap; /* Garante que os itens não quebrem de linha */
+    gap: 2rem; /* Espaçamento entre os avatares */
+    margin-top: 1rem;
+    overflow-x: auto; /* Permite rolagem horizontal caso a tela seja muito estreita */
+}
+
+/* Estilo dos avatares */
+.avatar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 220px; /* Largura maior */
+}
+
+.avatar img {
+    width: 150px; /* Largura da imagem */
+    height: 150px; /* Altura da imagem */
+    border-radius: 50%; /* Redondo */
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* Borda ao redor das imagens */
+.avatar::before {
+    content: '';
+    position: absolute;
+    width: 180px; /* Borda maior */
+    height: 180px;
+    border-radius: 50%; /* Redondo */
+    background: linear-gradient(to bottom, #00c6ff, #0072ff); /* Gradiente */
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0; /* Borda atrás da imagem */
+}
+
+.avatar p {
+    margin-top: 1rem;
+    font-size: 1.3rem; /* Texto maior */
+    font-weight: bold;
 }
 
 /* Responsividade para tablets */
 @media (max-width: 1024px) {
-    /* Título */
-    .txt-topo-site h1 {
-        font-size: 32px; /* Ajuste de tamanho para tablets */
-        margin-bottom: 18px;
+    .avatar img {
+        width: 140px;
+        height: 140px;
     }
 
-    /* Botão de contato */
-    .btn-contato button {
-        font-size: 17px; /* Ajuste para tablets */
-        padding: 14px 22px;
+    .avatar::before {
+        width: 160px;
+        height: 160px;
+    }
+
+    .avatar p {
+        font-size: 1.1rem;
     }
 }
 
-/* Responsividade para telas grandes */
-@media (min-width: 1025px) {
-    /* Título */
-    .txt-topo-site h1 {
-        font-size: 40px; /* Tamanho do título maior para telas grandes */
-        margin-bottom: 25px;
-    }
-
-    /* Botão de contato */
-    .btn-contato button {
-        font-size: 20px; /* Tamanho maior para botões em telas grandes */
-        padding: 16px 28px; /* Aumentando o padding */
-    }
+/* Título "Integrantes" */
+.integrantes h2 {
+    text-align: center;
+    font-size: 2.5rem; /* Maior destaque */
+    font-weight: bold;
+    margin: 2rem 0 1.5rem; /* Espaçamento acima e abaixo */
+    color: #333;
 }

@@ -8,7 +8,9 @@ import "../VotingSystem.css"; // Certifique-se de importar o CSS
 
 function VotingSystemDiretrizes() {
   const themes = [
-    { title: "Planejador Financeiro Básico", description: "Oferecemos ferramentas práticas para organizar suas finanças pessoais e atingir suas metas econômicas." },
+   { title: "Diretrizes para a Saúde", description: "Oferecemos orientações e práticas recomendadas para manter uma vida saudável, incluindo prevenção e cuidados médicos." },
+
+
    
 ];
 
