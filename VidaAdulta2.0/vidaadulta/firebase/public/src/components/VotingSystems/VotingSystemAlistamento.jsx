@@ -3,14 +3,13 @@ import { db } from "../../services/firebaseConfig";
 import { setDoc, doc, getDoc, updateDoc } from "firebase/firestore";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../services/firebaseConfig";
-import { Link } from 'react-router-dom'; // Importando o Link para navegação
-import "../VotingSystem.css"; // Certifique-se de importar o CSS
+import { Link } from 'react-router-dom';
+import "../VotingSystem.css";
 
 function VotingSystemAlistamento() {
   const themes = [
     { title: "Alistamento Militar", description: "Informações e orientações para o processo de alistamento militar obrigatório e suas etapas." },
-
-];
+  ];
 
   const [votes, setVotes] = useState({});
   const [userVotes, setUserVotes] = useState({});
@@ -30,7 +29,7 @@ function VotingSystemAlistamento() {
           const userDoc = await getDoc(doc(db, 'users', user.uid));
           if (userDoc.exists()) {
             const userData = userDoc.data();
-            userVotesData[theme.title] = userData.votes && userData.votes[theme.title] ? true : false;
+            userVotesData[theme.title] = userData.votes?.[theme.title] || false;
           }
         }
       }
@@ -74,7 +73,7 @@ function VotingSystemAlistamento() {
 
       await setDoc(userDocRef, {
         votes: { [themeTitle]: true },
-      }, { merge: true });
+      }, { merge: true }); // Adiciona dados sem sobrescrever
 
       setMessage(`Você votou no tema "${themeTitle}" com sucesso!`);
     } catch (error) {
@@ -90,7 +89,6 @@ function VotingSystemAlistamento() {
           <h3>{theme.title}</h3>
           <p>{theme.description}</p>
           
-          {/* Link para redirecionar para a página do tema */}
           <Link to={theme.pageUrl}>
             <button 
               onClick={() => handleVote(theme.title)} 
